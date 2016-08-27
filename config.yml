@@ -1,0 +1,9 @@
+message: '&6{PLAYER} &7has joined from &6{COUNTRY}&7.'
+message-leave: ''
+message-fail: '&6{PLAYER} &7has joined the game.'
+equine-players:
+- Seabreeze
+- Princess_Luna
+- SweetieBelle
+- AppleBloom
+- Scootaloo
