@@ -30,22 +30,19 @@ public class EventManager implements Listener
             String country = geoiplookup.getCountry(player.getAddress().getAddress()).getName();
             if (!country.equals("N/A"))
             {
-                if (settings.equinePlayers != null)
+                if (country.equals("Korea, Republic of"))
                 {
-                    if (country.equals("Korea, Republic of"))
-                    {
-                        country = "Republic of Korea (South Korea)";
-                    }
-                    if (country.equals("Korea, Democratic People's Republic of"))
-                    {
-                        country = "Democratic People's Republic of Korea (North Korea)";
-                    }
-                    if (settings.equinePlayers.contains(player.getName()))
-                    {
-                        country = settings.loginMessage.replace("{COUNTRY}", "Equestria");
-                    }
-                    country = settings.loginMessage.replace("{COUNTRY}", country);
+                    country = "Republic of Korea";
                 }
+                if (country.equals("Korea, Democratic People's Republic of"))
+                {
+                    country = "Democratic People's Republic of Korea";
+                }
+                if (settings.equinePlayers.contains(player.getName()))
+                {
+                    country = "Equestria";
+                }
+                message = settings.loginMessage.replace("{COUNTRY}", country);
             }
         }
         event.setJoinMessage(message.replace("{PLAYER}", player.getDisplayName()));

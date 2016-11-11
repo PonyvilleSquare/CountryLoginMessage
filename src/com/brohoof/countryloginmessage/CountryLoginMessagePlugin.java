@@ -16,6 +16,7 @@ public class CountryLoginMessagePlugin extends JavaPlugin
     public void onEnable()
 	{
 		settings = new Settings(this);
+		commandHandler = new CommandHandler(settings);
 		new Log(this);
 		geoiplookup = (new GeoIPHook(this)).getGeoIPLookup();
 		commandHandler = new CommandHandler(settings);
